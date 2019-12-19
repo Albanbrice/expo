@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>Villa de Diomède</title>
+
+	<link rel="stylesheet" type="text/css" href="../build/potree/potree.css">
+	<link rel="stylesheet" type="text/css" href="../libs/jquery-ui/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="../libs/perfect-scrollbar/css/perfect-scrollbar.css">
+	<link rel="stylesheet" type="text/css" href="../libs/openlayers3/ol.css">
+	<link rel="stylesheet" type="text/css" href="../libs/spectrum/spectrum.css">
+	<link rel="stylesheet" type="text/css" href="../libs/jstree/themes/mixed/style.css">
+</head>
+
+<body>
+	<script src="../libs/jquery/jquery-3.1.1.min.js"></script>
+	<script src="../libs/spectrum/spectrum.js"></script>
+	<script src="../libs/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+	<script src="../libs/jquery-ui/jquery-ui.min.js"></script>
+	<script src="../libs/three.js/build/three.min.js"></script>
+	<script src="../libs/other/BinaryHeap.js"></script>
+	<script src="../libs/tween/tween.min.js"></script>
+	<script src="../libs/d3/d3.js"></script>
+	<script src="../libs/proj4/proj4.js"></script>
+	<script src="../libs/openlayers3/ol.js"></script>
+	<script src="../libs/i18next/i18next.js"></script>
+	<script src="../libs/jstree/jstree.js"></script>
+	<script src="../build/potree/potree.js"></script>
+	<script src="../libs/plasio/js/laslaz.js"></script>
+	<script src="../libs/shapefile/shapefile.js"></script>
+	
+	<!-- INCLUDE ADDITIONAL DEPENDENCIES HERE -->
+	<!-- INCLUDE SETTINGS HERE -->
+	
+	<div class="potree_container" style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; ">
+		<div id="potree_render_area"></div>
+		<div id="potree_sidebar_container"> </div>
+	</div>
+	
+	<script>
+	
+		window.viewer = new Potree.Viewer(document.getElementById("potree_render_area"));
+		
+		viewer.setEDLEnabled(false);
+		viewer.setFOV(50);
+		viewer.setPointBudget(4*1000*1000);
+		viewer.loadSettingsFromURL();
+		
+		viewer.setDescription("Villa de Diomède, Pompéi</br>&#169; <a target='_blank' href='http://www.archeo3d.net/'>archeo3d.net</a>");
+				
+		viewer.classifications[55] = { visible: true, name: 'my custom classification' };
+		viewer.classifications[56] = { visible: true, name: 'happy birthday classification' };
+		
+		viewer.loadGUI(() => {
+			viewer.setLanguage('FR');
+			$("#menu_tools").next().show();
+			$("#menu_clipping").next().show();
+			viewer.toggleSidebar();
+		});
+
+		// Load and add point cloud to scene
+		Potree.loadPointCloud("../pointclouds/espace01/cloud.js", "entrée", e => {
+			let scene = viewer.scene;
+			let pointcloud = e.pointcloud;
+			
+			let material = pointcloud.material;
+			material.size = 1;
+			material.pointSizeType = Potree.PointSizeType.ADAPTIVE;
+			material.rgbBrightness  = 0;
+			material.shape = Potree.PointShape.SQUARE;
+			
+			scene.addPointCloud(pointcloud);
+			
+			scene.view.position.set(30.945, 22.270, 28.767);
+			scene.view.lookAt(new THREE.Vector3(22.582, 18.135, 29.369));
+			//viewer.fitToScreen();
+		});
+		
+		Potree.loadPointCloud("../pointclouds/espace02/cloud.js", "atrium", e => {
+			let scene = viewer.scene;
+			let pointcloud = e.pointcloud;
+			
+			let material = pointcloud.material;
+			material.size = 1;
+			material.pointSizeType = Potree.PointSizeType.ADAPTIVE;
+			material.rgbBrightness  = 0;
+			material.shape = Potree.PointShape.SQUARE;
+			
+			scene.addPointCloud(pointcloud);
+			
+			//scene.view.position.set(589974.341, 231698.397, 986.146);
+			//scene.view.lookAt(new THREE.Vector3(589851.587, 231428.213, 715.634));
+			//viewer.fitToScreen();
+		});
+		Potree.loadPointCloud("../pointclouds/espace04/cloud.js", "atrium triangulaire", e => {
+			let scene = viewer.scene;
+			let pointcloud = e.pointcloud;
+			
+			let material = pointcloud.material;
+			material.size = 1;
+			material.pointSizeType = Potree.PointSizeType.ADAPTIVE;
+			material.rgbBrightness  = 0;
+			material.shape = Potree.PointShape.SQUARE;
+			
+			scene.addPointCloud(pointcloud);
+			
+			//scene.view.position.set(589974.341, 231698.397, 986.146);
+			//scene.view.lookAt(new THREE.Vector3(589851.587, 231428.213, 715.634));
+			//viewer.fitToScreen();
+		});
+		Potree.loadPointCloud("../pointclouds/espace06/cloud.js", "cuisine", e, async => {
+			let scene = viewer.scene;
+			let pointcloud = e.pointcloud;
+			
+			let material = pointcloud.material;
+			material.size = 1;
+			material.pointSizeType = Potree.PointSizeType.ADAPTIVE;
+			material.rgbBrightness  = 0;
+			material.shape = Potree.PointShape.SQUARE;
+			
+			scene.addPointCloud(pointcloud);
+			
+			//scene.view.position.set(589974.341, 231698.397, 986.146);
+			//scene.view.lookAt(new THREE.Vector3(589851.587, 231428.213, 715.634));
+			//viewer.fitToScreen();
+			{
+			// define the transformation from shapefile to point cloud coordinate systems
+				proj4.defs("WGS84", "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs");
+				proj4.defs("pointcloud", pointcloud.projection);
+				let transform = proj4("WGS84", "pointcloud");
+
+				const loader = new Potree.ShapefileLoader();
+				loader.transform = transform;
+
+				// group all shapefile scene nodes into this node
+				const shapeNode = new THREE.Object3D();
+				viewer.scene.scene.add(shapeNode);
+
+			
+				// load natural.shp and change colors to green
+				const shpRdC = await loader.load("./shp/Rez_de_chaussee.shp");
+				//const shpRdC = loader.load("./shp/Rez_de_chaussee.shp");
+				shapeNode.add(shpRdC.node);
+
+				shpRdC.node.traverse(node => {
+					if(node.material){
+						node.material.color.setRGB(0, 1, 0)
+					}
+				});		
+				
+				viewer.onGUILoaded(() => {
+				// Add entry to object list in sidebar
+				let tree = $(`#jstree_scene`);
+				let parentNode = "other";
+
+				let shpRdCID = tree.jstree('create_node', parentNode, { 
+						"text": "Rez de chaussee", 
+						"icon": `${Potree.resourcePath}/icons/triangle.svg`,
+						"object": shpRdC.node,
+						"data": shpRdC.node,
+					}, 
+					"last", false, false);
+				tree.jstree(shpRdC.node.visible ? "check_node" : "uncheck_node", shpRdCID);
+				});
+			}
+		
+		});
+	</script>
+	
+	
+  </body>
+</html>
