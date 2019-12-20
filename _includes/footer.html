@@ -1,0 +1,20 @@
+<footer id="footer">
+    <div id="logo"><img src="http://villadiomede.huma-num.fr/3dproject/IMG/siteon0.png" width="220" height="110"></div>
+    <div id="description">
+        <h1>La villa de Diomède</h1>
+        <h2>{{ site.producteur}}</br>{{site.producteur_complement}}</h2>
+        <h3 class="photographe">Illustrations : {{site.infographiste}}</h3>
+    </div>
+     <div id="details">        
+        <div id="notice">
+            <p id="citation-footer"><span class="caps">{{ site.auteur }}</span>{% if page.author %} et <span class="caps">{{ page.author_id }}</span>, {% else %}, {% endif %}<em>{{ site.title_complet }}</em>, {{ site.place }}, {{ site.date }}, en ligne.</br>&lt; {{ site.url }} &gt;</p>
+            <p id="licence">{{ site.date }}, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr">CC BY-SA 4.0</a></p>
+        </div>
+        <div id="liens-footer">
+            <p><a href="">À propos</a></p>
+            <p><a href="">Mentions légales</a></p>
+            <p><a href="">Contact</a></p>
+        </div>
+       
+    </div>
+</footer>

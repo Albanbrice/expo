@@ -1,3 +1,23 @@
-markdown: redcarpet
+title : La villa de Diomède
+title_complet : Une exploration virtuelle à Pompéi
+title_alt : Pompéi
 baseurl: /expo
-exclude: ['README.MD']
+exclude:
+  - README.MD
+  - potree/pointclouds
+  - potree/models
+
+producteur: Villa Diomedes Project
+producteur_complement: AOROC UMR 8546 Ecole normale supérieure
+adresse: 45 rue d'Ulm 75005 Paris
+directrice_publication : Hélène Dessales
+infographiste : Alban-Brice Pimpaud
+auteur: Dessales H. et al.
+
+locale: fr_FR
+encoding: UTF-8
+
+
+date: 2020
+timezone: Europe/Paris
+place : Paris
