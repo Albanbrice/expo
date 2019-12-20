@@ -1,0 +1,189 @@
+---
+layout: microtypo
+---
+<!DOCTYPE html>
+{% include head.html %}
+<body id="body-partie-{{ page.partie_numero }}">
+	{% include header.html %}
+	<main id="main-partie">
+		<header>
+			<hgroup>
+				<h1><small>Partie {{ page.partie_numero }}</small> {{ page.title }}</h1>
+				<h2>{{ page.sous_titre }}</h2>
+			</hgroup>
+			<figure>
+				<img src="/images/{{ page.image_principale_partie }}" sizes="(max-width: 1100px) 400px, (max-width: 1600px) 600px, (min-width: 1800) 1000px" alt="{{ page.legende_image }}">
+				<figcaption>{{ page.legende_image }}</figcaption>
+			</figure>
+		</header>
+		<ul id="nav-partie-fixe">
+				{% if page.partie == 1 %}<li id="sommaire-part" onclick="toggleSommaire()">
+				<span>
+					<span id="svg-sommaire-open">{% include icons/menu.svg %} </span>
+					<span id="svg-sommaire-close">{% include icons/close.svg %} </span>
+					Sommaire partie
+				</span>
+						{% include toc.html html=content %}
+				</li>{% endif %}
+			{% if page.partie == 1 %}<li id="go-to-plan"><a href="#chiragan-villa">{% include icons/plan.svg %} <span>Plan Villa</span></a></li>{% endif %}
+			<li id="scroll-top"><a href="#main-partie"><span>Partie</span> ↑</a></li>
+			<li id="scroll-notice"><a href="#liste-notices"><span>Notices</span> ↓</a></li>
+		</ul>
+		{% if page.partie == 1 %}{% include map-plan.html html=content %}{% endif %}
+		<section id="main-content">
+			<div class="content">
+			{{ content }}
+			<div id="citation">
+				<h1>Pour citer cette partie</h1>
+				<p><span class="caps">{{ site.author.name_id }}</span>{% if page.author %} et <span class="caps">{{ page.author_id }}</span>, {% else %}, {% endif %} "{{ page.title }}", dans <em>{{ site.title_complet }}</em>, {{ site.place }}, {{ site.date }}, en ligne &lt;{{ site.url }}/{{ page.redirect_from }}&gt;.</p>
+			</div>
+			</div>
+		</section>
+		<section id="liste-notices">
+			<h1 class="title-liste-notices">Notices <small>{{ page.title }}</small></h1>
+			<div class="liste-notices-contenu">
+				{% if page.partie == 1 %}{% assign notices_classees = site.contenus | sort: 'order' %}<ul class="notice-group">
+					{% for contenus in notices_classees %}{% if contenus.type == "notice" and contenus.partie == 1 %}<li class="notice">
+						<a href="{{ contenus.url }}">
+							<figure>
+								<img src="/images/{{ contenus.image_principale }}.jpg" srcset="/images/{{ contenus.image_principale }}-400.jpg 400w, /images/{{ contenus.image_principale }}-600.jpg 600w, /images/{{ contenus.image_principale }}.jpg 1000w" sizes="(max-width: 450px) 400px, (max-width: 1600px) 600px, (min-width: 1601) 1000px" alt="{{ contenus.title }}">
+							</figure>
+							<p class="num-inventaire">{{ contenus.id_inventaire }}</p>
+							<h1>{{ contenus.title }}</h1>
+						</a>
+					</li>{% endif %}{% endfor %}
+				</ul>{% endif %}
+				{% if page.partie == 2 %}{% assign notices_classees = site.contenus | sort: 'order' %}<h2>Époque julio-claudienne</h2>
+				<ul class="notice-group">
+					{% for contenus in notices_classees %}{% if contenus.type == "notice" and contenus.partie == 2 and contenus.sous_groupe == 1 %}<li class="notice">
+						<a href="{{ contenus.url }}">
+							<figure>
+								<img src="/images/{{ contenus.image_principale }}.jpg" srcset="/images/{{ contenus.image_principale }}-400.jpg 400w, /images/{{ contenus.image_principale }}-600.jpg 600w, /images/{{ contenus.image_principale }}.jpg 1000w" sizes="(max-width: 450px) 400px, (max-width: 1600px) 600px, (min-width: 1601) 1000px" alt="{{ contenus.title }}">
+							</figure>
+							<p class="num-inventaire">{{ contenus.id_inventaire }}</p>
+							<h1>{{ contenus.title }}</h1>
+						</a>
+					</li>{% endif %}{% endfor %}
+				</ul>{% endif %}
+				{% if page.partie == 2 %}{% assign notices_classees = site.contenus | sort: 'order' %}<h2>Époque antonine </h2>
+				<ul class="notice-group">
+					{% for contenus in notices_classees %}{% if contenus.type == "notice" and contenus.partie == 2 and contenus.sous_groupe == 2 %}<li class="notice">
+						<a href="{{ contenus.url }}">
+							<figure>
+								<img src="/images/{{ contenus.image_principale }}.jpg" srcset="/images/{{ contenus.image_principale }}-400.jpg 400w, /images/{{ contenus.image_principale }}-600.jpg 600w, /images/{{ contenus.image_principale }}.jpg 1000w" sizes="(max-width: 450px) 400px, (max-width: 1600px) 600px, (min-width: 1601) 1000px" alt="{{ contenus.title }}">
+							</figure>
+							<p class="num-inventaire">{{ contenus.id_inventaire }}</p>
+							<h1>{{ contenus.title }}</h1>
+						</a>
+					</li>{% endif %}{% endfor %}
+				</ul>{% endif %}
+				{% if page.partie == 2 %}{% assign notices_classees = site.contenus | sort: 'order' %}<h2>Époque sévérienne </h2>
+				<ul class="notice-group">
+					{% for contenus in notices_classees %}{% if contenus.type == "notice" and contenus.partie == 2 and contenus.sous_groupe == 3 %}<li class="notice">
+						<a href="{{ contenus.url }}">
+							<figure>
+								<img src="/images/{{ contenus.image_principale }}.jpg" srcset="/images/{{ contenus.image_principale }}-400.jpg 400w, /images/{{ contenus.image_principale }}-600.jpg 600w, /images/{{ contenus.image_principale }}.jpg 1000w" sizes="(max-width: 450px) 400px, (max-width: 1600px) 600px, (min-width: 1601) 1000px" alt="{{ contenus.title }}">
+							</figure>
+							<p class="num-inventaire">{{ contenus.id_inventaire }}</p>
+							<h1>{{ contenus.title }}</h1>
+						</a>
+					</li>{% endif %}{% endfor %}
+				</ul>{% endif %}
+				{% if page.partie == 2 %}{% assign notices_classees = site.contenus | sort: 'order' %}<h2>L'Anarchie militaire </h2>
+				<ul class="notice-group">
+					{% for contenus in notices_classees %}{% if contenus.type == "notice" and contenus.partie == 2 and contenus.sous_groupe == 4 %}<li class="notice">
+						<a href="{{ contenus.url }}">
+							<figure>
+								<img src="/images/{{ contenus.image_principale }}.jpg" srcset="/images/{{ contenus.image_principale }}-400.jpg 400w, /images/{{ contenus.image_principale }}-600.jpg 600w, /images/{{ contenus.image_principale }}.jpg 1000w" sizes="(max-width: 450px) 400px, (max-width: 1600px) 600px, (min-width: 1601) 1000px" alt="{{ contenus.title }}">
+							</figure>
+							<p class="num-inventaire">{{ contenus.id_inventaire }}</p>
+							<h1>{{ contenus.title }}</h1>
+						</a>
+					</li>{% endif %}{% endfor %}
+				</ul>{% endif %}
+				{% if page.partie == 2 %}{% assign notices_classees = site.contenus | sort: 'order' %}<h2>Un portrait d'époque théodosienne </h2>
+				<ul class="notice-group">
+					{% for contenus in notices_classees %}{% if contenus.type == "notice" and contenus.partie == 2 and contenus.sous_groupe == 5 %}<li class="notice">
+						<a href="{{ contenus.url }}">
+							<figure>
+								<img src="/images/{{ contenus.image_principale }}.jpg" srcset="/images/{{ contenus.image_principale }}-400.jpg 400w, /images/{{ contenus.image_principale }}-600.jpg 600w, /images/{{ contenus.image_principale }}.jpg 1000w" sizes="(max-width: 450px) 400px, (max-width: 1600px) 600px, (min-width: 1601) 1000px" alt="{{ contenus.title }}">
+							</figure>
+							<p class="num-inventaire">{{ contenus.id_inventaire }}</p>
+							<h1>{{ contenus.title }}</h1>
+						</a>
+					</li>{% endif %}{% endfor %}
+				</ul>{% endif %}
+				{% if page.partie == 3 %}{% assign notices_classees = site.contenus | sort: 'order' %}<ul class="notice-group">
+					{% for contenus in notices_classees %}{% if contenus.type == "notice" and contenus.partie == 3 %}<li class="notice">
+						<a href="{{ contenus.url }}">
+							<figure>
+								<img src="/images/{{ contenus.image_principale }}.jpg" srcset="/images/{{ contenus.image_principale }}-400.jpg 400w, /images/{{ contenus.image_principale }}-600.jpg 600w, /images/{{ contenus.image_principale }}.jpg 1000w" sizes="(max-width: 450px) 400px, (max-width: 1600px) 600px, (min-width: 1601) 1000px" alt="{{ contenus.title }}">
+							</figure>
+							<p class="num-inventaire">{{ contenus.id_inventaire }}</p>
+							<h1>{{ contenus.title }}</h1>
+						</a>
+					</li>{% endif %}{% endfor %}
+				</ul>{% endif %}
+				{% if page.partie == 4 %}{% assign notices_classees = site.contenus | sort: 'order' %}<h2>Portraits dynastiques de l’époque tétrarchique</h2>
+				<ul class="notice-group">
+					{% for contenus in notices_classees %}{% if contenus.type == "notice" and contenus.partie == 4 and contenus.sous_groupe == 1 %}<li class="notice">
+						<a href="{{ contenus.url }}">
+							<figure>
+								<img src="/images/{{ contenus.image_principale }}.jpg" srcset="/images/{{ contenus.image_principale }}-400.jpg 400w, /images/{{ contenus.image_principale }}-600.jpg 600w, /images/{{ contenus.image_principale }}.jpg 1000w" sizes="(max-width: 450px) 400px, (max-width: 1600px) 600px, (min-width: 1601) 1000px" alt="{{ contenus.title }}">
+							</figure>
+							<p class="num-inventaire">{{ contenus.id_inventaire }}</p>
+							<h1>{{ contenus.title }}</h1>
+						</a>
+					</li>{% endif %}{% endfor %}
+				</ul>{% endif %}
+				{% if page.partie == 4 %}{% assign notices_classees = site.contenus | sort: 'order' %}<h2>Le décor figuré</h2>
+				<ul class="notice-group">
+					{% for contenus in notices_classees %}{% if contenus.type == "notice" and contenus.partie == 4 and contenus.sous_groupe == 3 %}<li class="notice">
+						<a href="{{ contenus.url }}">
+							<figure>
+								<img src="/images/{{ contenus.image_principale }}.jpg" srcset="/images/{{ contenus.image_principale }}-400.jpg 400w, /images/{{ contenus.image_principale }}-600.jpg 600w, /images/{{ contenus.image_principale }}.jpg 1000w" sizes="(max-width: 450px) 400px, (max-width: 1600px) 600px, (min-width: 1601) 1000px" alt="{{ contenus.title }}">
+							</figure>
+							<p class="num-inventaire">{{ contenus.id_inventaire }}</p>
+							<h1>{{ contenus.title }}</h1>
+						</a>
+					</li>{% endif %}{% endfor %}
+				</ul>{% endif %}
+				{% if page.partie == 4 %}{% assign notices_classees = site.contenus | sort: 'order' %}<h2>Le décor architectural</h2>
+				<ul class="notice-group">
+					{% for contenus in notices_classees %}{% if contenus.type == "notice" and contenus.partie == 4 and contenus.sous_groupe == 6 %}<li class="notice">
+						<a href="{{ contenus.url }}">
+							<figure>
+								<img src="/images/{{ contenus.image_principale }}.jpg" srcset="/images/{{ contenus.image_principale }}-400.jpg 400w, /images/{{ contenus.image_principale }}-600.jpg 600w, /images/{{ contenus.image_principale }}.jpg 1000w" sizes="(max-width: 450px) 400px, (max-width: 1600px) 600px, (min-width: 1601) 1000px" alt="{{ contenus.title }}">
+							</figure>
+							<p class="num-inventaire">{{ contenus.id_inventaire }}</p>
+							<h1>{{ contenus.title }}</h1>
+						</a>
+					</li>{% endif %}{% endfor %}
+				</ul>{% endif %}
+			</div>
+		</section>
+	</main>
+	<script>
+		window.onload = function(){
+			commmon();
+			let w = document.body.clientWidth;
+			if(w < 700){
+				document.getElementById("nav-partie-fixe").style.display = "none";
+			}
+			window.addEventListener('scroll', function(e) {
+				document.getElementById("nav-partie-fixe").style.display = "flex";
+			});
+			/* Plan + map villa partie 1 */
+			var planChirigan =  document.getElementById("plan-chiragan");
+			if (typeof(planChirigan) != 'undefined' && planChirigan != null){
+				planVilla();
+				panzoomLoad(5);
+				document.getElementById("radio-plan-chiragan").checked = true;
+			}
+			/* référence bibliographique */
+			imageComparaison();
+			citation();
+		}
+		function toggleZoom(){ }; /* hack */
+	</script>
+	{% include footer.html %}

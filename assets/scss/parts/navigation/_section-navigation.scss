@@ -71,7 +71,7 @@
   border-right: 1px solid currentColor;
   @include flex;
   @include justify-content(center);
-  @include align-items(center)
+  @include align-items(center);
   cursor: pointer;
   svg{ width: 25px;}
   &:hover svg{ fill: $beige-hover;; }

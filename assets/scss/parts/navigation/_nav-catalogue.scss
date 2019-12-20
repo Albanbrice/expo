@@ -13,7 +13,7 @@
   h1{ cursor: pointer; }
 
   ul{
-    @include sserif-18()
+    @include sserif-18();
     margin-bottom: $baseline*5;
   }
 

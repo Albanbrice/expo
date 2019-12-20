@@ -1,0 +1,108 @@
+---
+layout: microtypo
+---
+<!DOCTYPE html>
+{% include head.html %}
+<body class="body-notice">
+{% include header.html %}
+		<main id="main-notice">
+			<header>
+
+					<p class="partie-notice">
+						<a href="{{ site.url }}/{% if page.partie == 1 %}{% for contenus in site.contenus %}{% if contenus.type == "partie" and contenus.partie_numero == 1 %}{{ contenus.slug }}{% endif %}{% endfor %}{% endif %}{% if page.partie == 2 %}{% for contenus in site.contenus %}{% if contenus.type == "partie" and contenus.partie_numero == 2 %}{{ contenus.slug }}{% endif %}{% endfor %}{% endif %}{% if page.partie == 3 %}{% for contenus in site.contenus %}{% if contenus.type == "partie" and contenus.partie_numero == 3 %}{{ contenus.slug }}{% endif %}{% endfor %}{% endif %}{% if page.partie == 4 %}{% for contenus in site.contenus %}{% if contenus.type == "partie" and contenus.partie_numero == 4 %}{{ contenus.slug }}{% endif %}{% endfor %}{% endif %}">
+							<span class="num-partie">Partie {{ page.partie }} </span>
+							<span class="title-partie">{% if page.partie == 1 %}Introduction{% endif %}{% if page.partie == 2 %}Galerie des portraits{% endif %}{% if page.partie == 3 %}L'art grec revisité{% endif %}{% if page.partie == 4 %}L'antiquité tardive{% endif %}</span>
+						</a>
+					</p>
+
+				<h1>{{ page.title }}</h1>
+
+			</header>
+			<div id="hack-phone"></div>
+			<section id="section-images" aria-label="Section contenant les images de la sculpture" data-nbr-img="{{page.vues}}" data-current-img="1">
+				<input type="radio" id="radio-360viewer" name="action-notice" value="360viewer" hidden>
+				<input type="radio" id="radio-diapo" name="action-notice" value="diapo" hidden>
+				<input type="radio" id="radio-zoom" name="action-notice" hidden value="zoom">
+				<input type="radio" id="radio-grid" name="action-notice" hidden value="grid" checked>
+
+				<div id="all-buttons">
+					<div class="button-group" id="buttons-slider-choice">
+						<button id="button-viewer360" aria-label="Vue 360° (cliquer sur l'image et bouger)" onclick="display360('/images/{{ page.id_notice }}-',8)">{% include icons/360-degree.svg %}</button>
+						<button id="button-diapo" aria-label="Diaporama" onclick="displayDiapo('/images/{{ page.id_notice }}-',8)">{% include icons/slideshow.svg %}</button>
+					</div>
+
+					<div class="button-group" id="buttons-panzoom">
+						<button class="zoom-in" aria-label="Zoomer" onclick="toggleZoom()">{% include icons/plus.svg %}</button>
+						<button class="zoom-out" aria-label="Dézoomer">{% include icons/moins.svg %}</button>
+						<button class="reset" aria-label="Reset Zoom" onclick="resetRadio()">{% include icons/reset.svg %}</button>
+					</div>
+					<div class="button-group">
+						<a id="download-image" data-path="/images/{{ page.id_notice }}" href="/images/{{ page.id_notice }}-1-3000.jpg" download><button id="button-download-all-images" aria-label="Télécharger l'image affichée">{% include icons/download.svg %}</button></a>
+					</div>
+				</div>
+
+				<div id="threesixty" class="parent images-id">
+						<div id="zoom-container" class="panzoom-parent">
+							<div id="spinner">
+									<span>0%</span>
+							</div>
+							<div id="all_images" class="panzoom"></div>
+						</div>
+						<nav id="diaporama_nav">
+							<ul></ul>
+							<button id="diapo-prev" onclick="diapoButton('prev')"><span>←</span></button>
+							<button id="diapo-next" onclick="diapoButton('next')"><span>→</span></button>
+						</nav>
+				</div>
+				<div id="images-grid">
+						{% if page.vues == 1 %}<figure id="only-one"><img src="/images/{{ page.id_notice }}.jpg" alt="{{ page.title }}"></figure>{% endif %}
+						{% if page.vues >= 2 %}<figure id="figure-1"><img src="/images/{{ page.id_notice }}-1.jpg" alt="{{ page.title }}"></figure>
+						<figure id="figure-2"><img src="/images/{{ page.id_notice }}-2.jpg" alt="{{ page.title }}"></figure>{% endif %}
+						{% if page.vues >= 3 %}<figure id="figure-3"><img src="/images/{{ page.id_notice }}-3.jpg" alt="{{ page.title }}"></figure>{% endif %}
+						{% if page.vues >= 4 %}<figure id="figure-4"><img src="/images/{{ page.id_notice }}-4.jpg" alt="{{ page.title }}"></figure>{% endif %}
+						{% if page.vues >= 5 %}<figure id="figure-5"><img src="/images/{{ page.id_notice }}-5.jpg" alt="{{ page.title }}"></figure>{% endif %}
+						{% if page.vues >= 6 %}<figure id="figure-6"><img src="/images/{{ page.id_notice }}-6.jpg" alt="{{ page.title }}"></figure>{% endif %}
+						{% if page.vues >= 7 %}<figure id="figure-7"><img src="/images/{{ page.id_notice }}-7.jpg" alt="{{ page.title }}"></figure>{% endif %}
+						{% if page.vues >= 8 %}<figure id="figure-8"><img src="/images/{{ page.id_notice }}-8.jpg" alt="{{ page.title }}"></figure>{% endif %}
+				</div>
+			</section>
+			<section id="content-notice">
+        <dl>
+          {% if page.donnees_biographiques1 == null %}{% else %}<div><dt>Données biographiques</dt><dd>{{ page.donnees_biographiques1 }}{% if page.donnees_biographiques2 == null %}{% else %}<br>{{ page.donnees_biographiques2 }}{% endif %}</dd></div>{% endif %}
+					{% if page.date_creation == null %}{% else %}<div><dt>Date de création</dt><dd>{{ page.date_creation }}{% endif %}</dd></div>
+					{% if page.type_oeuvre == null %}{% else %}<div><dt>Type</dt><dd>{{ page.type_oeuvre }}</dd></div>{% endif %}
+          <div><dt>Matériau</dt><dd>{{ page.materiau }}</dd></div>{% if page.hauteur == null and page.largeur == null and page.longueur == null and page.epaisseur == null %}{% else %}
+          <div><dt>Dimensions</dt><dd>{% if page.hauteur == null %}{% else %}H. {{ page.hauteur }}{% endif %}{% if page.largeur == null or page.hauteur == null %}{% else %} x {% endif %}{% if page.largeur == null %}{% else %}l. {{ page.largeur }}{% endif %}{% if page.longueur == null %}{% else %} x {% endif %}{% if page.longueur == null %}{% else %}L. {{ page.longueur }}{% endif %}{% if page.profondeur == null %}{% else %} x {% endif %}{% if page.profondeur == null %}{% else %}P. {{ page.profondeur }}{% endif %}{% if page.epaisseur == null %}{% else %} x {% endif %}{% if page.epaisseur == null %}{% else %}E. {{ page.epaisseur }}{% endif %} (cm)</dd></div>{% endif %}
+		  <div><dt>Numéro d'inventaire</dt><dd>{{ page.id_inventaire }}</dd></div>
+
+		</dl>
+		<ul id="informations">
+				<li aria-label="Nombre d'images liées à la notice">{% if page.vues == 1 %}1 image{% else %}{{page.vues}} images{% endif %}</li>
+				<li aria-label="Ouvrir la fiche Wikidata dans un nouvel onglet"><a class="link-wikidata" target=”_blank” href="https://www.wikidata.org/wiki/{{ page.id_wikidata }}">Wikidata</a></li>
+				<li aria-label="Pour citer cette notice"><a class="link-citer" href="#citation">Citer</a></li>
+		</ul>
+
+				{{ content }}
+				{% if page.bibliographie == "oui" %}<div id="bibliographie">
+						<h1>Bibliographie</h1>
+				{% bibliography -f {{ page.id_notice }} %}
+				</div>{% endif %}
+				<div id="citation">
+					<h1>Pour citer cette notice</h1>
+					<p>{% if page.author %}<span class="caps">{{ page.author_id }}</span>{% else %}<span class="caps">{{ site.author.name_id }}</span>{% endif %}, "{{ page.title }}", dans <em>{{ site.title_complet }}</em>, {{ site.place }}, {{ site.date }}, en ligne &lt;{{ site.url }}/ark:/87276/{{ page.id_ark }}&gt;.</p>
+				</div>
+			</section>
+
+		</main>
+{% include footer.html %}
+
+<script src="/assets/js/notices.js"></script>
+<script>
+	window.onload = function(){
+		commmon();
+		imageComparaison();
+		citation();
+		panzoomLoad(5);
+		noticesImages("/images/{{ page.id_notice }}-");
+	}
+</script>
