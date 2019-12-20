@@ -1,6 +1,3 @@
----
-
----
 # Exposition virtuelle
 
 Ce dépôt contient une partie de la documentation qui a été réalisée dans le cadre de l'étude de la villa de Diomède à Pompéi, et qui a donnée lieu à la publication d'une monographie conçue par l'équipe pluridisciplinaire du Villa Diomedes Project dirigée par Hélène Dessales.
