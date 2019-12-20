@@ -1,0 +1,156 @@
+
+/* Style not specific to paged.js ----------------------------------------------------------------------- 
+--------------------------------------------------------------------------------------------------------- */
+
+
+
+body{
+    font-family: "Orkney", helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 14.5px;
+    --font-size: 14.5px;
+    line-height: 18px;
+    --baseline: 18px;
+    color: black;
+    --alinea: 6mm;
+    --font: "Orkney", helvetica, sans-serif;
+    --font-title: "Belleza", "optima";
+    --font-size-note: 9px;
+    --baseline-note: 12px;
+    --font-size-upp: 13px;
+    /* --color: #474A8A; */
+    --color: #986157; /* 0%, 0%, 5%, 41% */
+    --color-partie: #986157;
+}
+
+
+/* delete ? */
+.img-comparaison{ 
+    display: inline-block!important; 
+    float: left; 
+}
+
+
+.img-comparaison img{  width: 30mm; }
+
+
+
+/* PARTIES TEXTE ---------------------------------------------------------------------------------------- 
+--------------------------------------------------------------------------------------------------------- 
+--------------------------------------------------------------------------------------------------------- */
+
+
+/* PARTIES TEXTE / hgroup -----------------------------------------------------------  */
+
+.partie-texte hgroup{
+    margin-bottom: calc(var(--baseline)*7);
+}
+
+.partie-texte hgroup .num-partie{
+    position: absolute;
+    left: -26mm;
+}
+
+.partie-texte hgroup h1{
+    font-size: var(--font-size-upp);
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    position: relative; 
+    top: 1px;
+}
+
+.partie-texte hgroup h2{
+    font-size: var(--font-size);
+    font-weight: 400;
+}
+
+
+/* PARTIES TEXTE / texte -------------------------------------------------------------------  */
+
+
+.partie-texte hgroup { color: var(--color) }
+
+.partie-texte p{ 
+    text-indent: var(--alinea); 
+    widows: 2;
+    orphans: 2;
+}
+
+
+.partie-texte h3{ 
+    font-size: var(--font-size-upp);
+    text-transform: uppercase;
+    font-weight: 500;
+    padding-left: var(--alinea);
+    letter-spacing: 1px;
+    padding-top: var(--baseline);
+    padding-bottom: var(--baseline);
+    position: relative;
+    top: 10px;
+    break-after: avoid; 
+}
+
+.partie-texte h4{ 
+    font-size: var(--font-size);
+    font-weight: 400;
+    padding-left: var(--alinea);
+    padding-top: calc(var(--baseline)*1);
+    padding-bottom: 0;
+    position: relative;
+    top: -5px;
+    font-style: italic;
+    break-after: avoid;
+}
+
+.partie-texte hgroup + p,
+.partie-texte h3 + p,
+.partie-texte h4 + p{ text-indent: 0; }
+
+
+/* MICROTYPO*/
+
+.spacing-minus002 { letter-spacing: -0.02px; }
+.spacing-minus02 { letter-spacing: -0.25px; }
+.fine { font-size: 6px!important; }
+
+
+[data-id="la-découverte-les-fouilles"]{ padding-top: 0px!important; }
+
+#partnull-ref10::after{ content: ","}
+
+/* PARTIES TEXTE / ref biblio ---------------------------------------------------------  */
+
+.citation, .sidenote{ display: none; }
+
+
+#martres-tolosane{ 
+    break-before: page; 
+    width: 300px;
+    height: 300px;
+}
+
+
+
+/* IMG MARTRES TOLOSANE ---------------------------------------------------------  */
+
+#martres-tolosane{
+    width: calc(var(--pagedjs-pagebox-width) - var(--pagedjs-margin-left));
+    height: calc(var(--pagedjs-pagebox-height) - var(--pagedjs-margin-bottom) - var(--pagedjs-margin-top) - 1px);
+    position: relative;
+    left: calc(var(--pagedjs-margin-right)*-1); 
+}
+#martres-tolosane img{ 
+    width: 100%; 
+    height: calc(100% - var(--baseline)*1.5 + 2px);
+    object-fit: cover;
+    /* object-position: -220px; */
+    object-position: -478px
+}
+
+#martres-tolosane .figcaption {
+    font-style: italic;
+    font-size: var(--font-size-note);
+    text-indent: 0;
+    padding-top: 3px;
+}

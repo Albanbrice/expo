@@ -1,0 +1,116 @@
+body{
+    --bleed: 5mm;
+}
+
+@media print {
+
+    /* ALL PAGES ----------------------------------------------------------------------- */
+
+    @page {
+        size: 165mm 235mm;
+        margin-top: 36px;
+        margin-bottom: 76px;
+        /* bleed: 5mm;
+        marks: crop; */
+    }
+    
+    @page:left {
+        margin-right: 36mm;
+        margin-left: 14mm;
+        @bottom-left{
+            content: counter(page);
+            text-align: left;
+            font-family: var(--font-title);
+            font-size: 24px;
+            position: relative;
+            top: 4px;
+        }
+    }
+    
+    
+    @page:right {
+        margin-left: 36mm;
+        margin-right: 14mm;
+    
+        @bottom-right{
+            content: counter(page);
+            text-align: right;
+            font-family: var(--font-title);
+            font-size: 24px; 
+            position: relative;
+            top: 4px;
+        }
+    }
+    
+
+    
+
+
+   
+
+
+    /* BREAKS ----------------------------------------------------------------------- */
+
+
+    #copyright {  break-before: page; }
+    #title-page { break-before: page; }
+    #a-propos { break-before: right; }
+    #toc { break-before: right; }
+
+    #colophon {  break-before: right; }
+    #citation {  break-before: page; }
+
+    .page-titre { break-before: right; }
+    .aplat-verso { break-before: page; }
+    .partie-texte { break-before: right; }
+
+    .refs-biblio { break-before: page; }
+
+    .notice { break-before: page; }
+    .notice figure { break-before: page; }
+    
+
+    #half-title, #copyright, #title-page, #a-propos, #toc { page: frontmatter; }
+
+
+
+     /* BLANK PAGES --------------------------------------------------------------------- */
+
+     @page :blank {
+
+        @top-left-corner { content: none; }
+        @top-left { content: none; }
+        @top-center { content: none; }
+        @top-right { content: none; }
+        @top-right-corner { content: none; }
+        @left-top { content: none; }
+        @left-middle { content: none; }
+        @left-bottom { content: none; }
+        @right-top { content: none; }
+        @right-middle { content: none; }
+        @right-bottom { content: none; }
+        @bottom-left-corner { content: none; }
+        @bottom-left { content: none; }
+        @bottom-center { content: none; }
+        @bottom-right { content: none; }
+        @bottom-right-corner { content: none; }
+
+    }
+
+
+    @page frontmatter {
+
+        @bottom-left-corner { content: none; }
+        @bottom-left { content: none; }
+        @bottom-center { content: none; }
+        @bottom-right { content: none; }
+        @bottom-right-corner { content: none; }
+
+    }
+
+    @page :nth(8) { @bottom-left { content: none; } }
+    @page :nth(114) { @bottom-left { content: none; } }
+
+
+}
+

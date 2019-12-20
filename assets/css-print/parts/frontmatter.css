@@ -1,0 +1,145 @@
+#half-title h1 {
+    font-size: var(--font-size);
+    line-height: var(--baseline);
+    font-weight: 400;
+    color: var(--color);
+}
+
+#half-title, #title-page, #toc, #a-propos { color: var(--color); }
+
+#copyright {
+    padding-top: 4px;
+    position: absolute;
+    bottom: 3px;
+}
+
+#copyright img{ 
+    width: 20mm; 
+    position: absolute;
+    bottom: 4px;
+    right: 0;
+}
+
+#copyright p{
+    font-size: var(--font-size-note);
+    line-height: var(--baseline-note);
+}
+
+#copyright .group-copyright{
+    margin-top: var(--baseline-note);
+}
+
+#copyright a { 
+    font-weight: 500;
+    color: var(--color); 
+}
+
+
+#title-page h1{
+    font-family: var(--font-title);
+    font-weight: normal;
+    text-transform: uppercase;
+    padding-top: calc(var(--baseline)*3);
+    position: relative;
+    top: -1px;
+}
+
+
+
+.line1, .line2 {
+    display: block;
+    font-size: 24px;
+    padding-left: 0px;
+    line-height: 24px;
+}
+
+.line3 {
+    display: block;
+    font-size: 106px;
+    line-height: calc(var(--baseline)*5);
+    position: relative;
+    left: -75px;
+    top: 10px;
+    letter-spacing: 0.5px;
+}
+
+#publisher{
+    width: 400px;
+    position: absolute;
+    bottom: 2px;
+}
+
+
+
+#publisher .musee{
+    font-family: var(--font-title);
+    font-weight: normal;
+    font-size: 24px;
+    line-height: calc(var(--baseline)*1.5);
+    text-transform: uppercase;
+
+ 
+}
+
+
+
+#publisher .year { margin-top: 18px; }
+
+
+
+#a-propos h1, #toc h1 {
+    font-size: var(--font-size);
+    line-height: var(--baseline);
+    font-weight: 400;
+    margin-bottom: calc(var(--baseline)*8);
+    color: var(--color);
+}
+
+#a-propos p { 
+    text-indent: var(--alinea); 
+    color: var(--color)!important;
+}
+#a-propos h1 + p { text-indent: 0; }
+#a-propos .signature { margin-top: var(--baseline); }
+
+
+#toc li { margin-bottom: calc(var(--baseline)*1) ; }
+
+#toc .toc-parties li,
+#toc .toc-parties {
+    margin-bottom: calc(var(--baseline)*2);
+}
+
+#toc .toc-parties .titre { 
+    display: block;
+    font-family: var(--font-title);
+    font-weight: normal;
+    font-size: 24px;
+    line-height: calc(var(--baseline)*1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    top: -4px;
+}
+
+
+#toc li a::after{
+    content: target-counter(attr(href), page);
+    float: right;
+    font-family: var(--font-title);
+    font-size: 24px;
+    position: relative;
+    top: -4px;
+}
+
+
+#toc .toc-parties li a::after { top: -24px;}
+/* 
+
+#toc .toc-parties li a::after{
+    font-family: var(--font-title);
+    font-size: 24px;
+    position: relative;
+    top: -24px;
+} */
+

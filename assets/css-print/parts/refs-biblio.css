@@ -1,0 +1,81 @@
+/* Appel notes dans le texte */
+
+.ref-fn, .mark-fn {
+    
+    font-weight: 500;
+    color: var(--color);
+
+}
+/* .ref-fn::before,
+.mark-fn::before { content:'_' } */
+
+.ref-fn{
+    font-size: 12px;
+    position: relative;
+    top: -2px;
+    line-height: 0;
+}
+
+.ref-fn-notice, .mark-fn-notice {
+    font-size: var(--font-size-note);
+    color: var(--color);
+}
+
+
+/* NOtes */
+
+
+.refs-biblio ul{
+    columns: 2;
+    column-gap: 6mm;
+    column-fill: auto!important;
+    padding-top: 5px;
+   
+}
+
+#refs-biblio-02 ul{
+    columns: 1;
+    width: calc((100% - 6mm)/2);
+}
+
+.refs-biblio ul[data-split-from]{ padding-top: 5px!important; }
+
+
+.refs-biblio ul li{
+    font-size: var(--font-size-note);
+    line-height: var(--baseline-note);
+    padding-bottom: var(--baseline-note);
+    position: relative;
+    padding-left: 2.5mm;
+    /* break-inside: avoid; */
+}
+
+.mark-fn, .mark-fn-notice {
+    /* font-size: var(--font-size); */
+    line-height: var(--baseline-note);
+    display: block;
+    position: absolute;
+    left: -2.5mm;
+}
+
+.mark-fn::after{ content: ". "; }
+
+.refs-biblio ul li a{ display: none;}
+
+#refs-biblio-04 { break-before: right!important; }
+
+
+#notice-ra57-ref{
+    font-size: 1.6em;
+    line-height: 0;
+    position: relative;
+    top: 4px;
+}
+
+#notice-ra57-fn .mark-fn-notice { 
+    font-size: 1.8em;
+    line-height: 0;
+    top: 11px;
+}
+
+

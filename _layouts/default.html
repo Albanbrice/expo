@@ -1,24 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">   
-        <meta name="description" content="Description expo">
-        <meta name="author" content="Alban-Brice Pimpaud">
-        <link rel="icon" type="image/x-icon" href="http://villadiomede.huma-num.fr/bdd/admin/style/logo_project.png">
-
-        <!-- Bootstrap -->
-        <script type="text/javascript" src="{{site.baseurl}}/potree/libs/jquery/jquery-3.1.1.min.js"></script>  
-        <link rel="stylesheet" href="{{site.baseurl}}/potree/libs/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="{{site.baseurl}}/assets/style.css">
-        <script src="{{site.baseurl}}/potree/libs/bootstrap/js/bootstrap.min.js"></script>
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400|Roboto:400" > 	
-        <!-- Custom elements -->
-        <!-- <link rel="stylesheet" href="css/custom.css"> -->
-        <!-- <script src="js/main.js" defer></script> -->
-    </head>
-    {{site.baseurl}}
-       {{content}} 
-       {% include footer.html %}
+{% include head.html %}
+    {{content}} 
+{% include footer.html %}
 </html>
