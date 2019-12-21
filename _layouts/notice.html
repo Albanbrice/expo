@@ -11,11 +11,11 @@ layout: microtypo
 					<p class="partie-notice">
 						<a href="{{ site.url }}/{% if page.partie == 1 %}{% for contenus in site.contenus %}{% if contenus.type == "partie" and contenus.partie_numero == 1 %}{{ contenus.slug }}{% endif %}{% endfor %}{% endif %}{% if page.partie == 2 %}{% for contenus in site.contenus %}{% if contenus.type == "partie" and contenus.partie_numero == 2 %}{{ contenus.slug }}{% endif %}{% endfor %}{% endif %}{% if page.partie == 3 %}{% for contenus in site.contenus %}{% if contenus.type == "partie" and contenus.partie_numero == 3 %}{{ contenus.slug }}{% endif %}{% endfor %}{% endif %}{% if page.partie == 4 %}{% for contenus in site.contenus %}{% if contenus.type == "partie" and contenus.partie_numero == 4 %}{{ contenus.slug }}{% endif %}{% endfor %}{% endif %}">
 							<span class="num-partie">Partie {{ page.partie }} </span>
-							<span class="title-partie">{% if page.partie == 1 %}Introduction{% endif %}{% if page.partie == 2 %}Galerie des portraits{% endif %}{% if page.partie == 3 %}L'art grec revisité{% endif %}{% if page.partie == 4 %}L'antiquité tardive{% endif %}</span>
+							<span class="title-partie">{% if page.partie == 1 %}Numérisation{% endif %}{% if page.partie == 2 %}Reconstitution{% endif %}{% if page.partie == 3 %}L'art grec revisité{% endif %}{% if page.partie == 4 %}L'antiquité tardive{% endif %}</span>
 						</a>
 					</p>
 
-				<h1>{{ page.title }}</h1>
+				<h1>{{ page.title }} [{{page.id_espace}}]</h1>
 
 			</header>
 			<div id="hack-phone"></div>
@@ -66,33 +66,7 @@ layout: microtypo
 						{% if page.vues >= 8 %}<figure id="figure-8"><img src="/images/{{ page.id_notice }}-8.jpg" alt="{{ page.title }}"></figure>{% endif %}
 				</div>
 			</section>
-			<section id="content-notice">
-        <dl>
-          {% if page.donnees_biographiques1 == null %}{% else %}<div><dt>Données biographiques</dt><dd>{{ page.donnees_biographiques1 }}{% if page.donnees_biographiques2 == null %}{% else %}<br>{{ page.donnees_biographiques2 }}{% endif %}</dd></div>{% endif %}
-					{% if page.date_creation == null %}{% else %}<div><dt>Date de création</dt><dd>{{ page.date_creation }}{% endif %}</dd></div>
-					{% if page.type_oeuvre == null %}{% else %}<div><dt>Type</dt><dd>{{ page.type_oeuvre }}</dd></div>{% endif %}
-          <div><dt>Matériau</dt><dd>{{ page.materiau }}</dd></div>{% if page.hauteur == null and page.largeur == null and page.longueur == null and page.epaisseur == null %}{% else %}
-          <div><dt>Dimensions</dt><dd>{% if page.hauteur == null %}{% else %}H. {{ page.hauteur }}{% endif %}{% if page.largeur == null or page.hauteur == null %}{% else %} x {% endif %}{% if page.largeur == null %}{% else %}l. {{ page.largeur }}{% endif %}{% if page.longueur == null %}{% else %} x {% endif %}{% if page.longueur == null %}{% else %}L. {{ page.longueur }}{% endif %}{% if page.profondeur == null %}{% else %} x {% endif %}{% if page.profondeur == null %}{% else %}P. {{ page.profondeur }}{% endif %}{% if page.epaisseur == null %}{% else %} x {% endif %}{% if page.epaisseur == null %}{% else %}E. {{ page.epaisseur }}{% endif %} (cm)</dd></div>{% endif %}
-		  <div><dt>Numéro d'inventaire</dt><dd>{{ page.id_inventaire }}</dd></div>
-
-		</dl>
-		<ul id="informations">
-				<li aria-label="Nombre d'images liées à la notice">{% if page.vues == 1 %}1 image{% else %}{{page.vues}} images{% endif %}</li>
-				<li aria-label="Ouvrir la fiche Wikidata dans un nouvel onglet"><a class="link-wikidata" target=”_blank” href="https://www.wikidata.org/wiki/{{ page.id_wikidata }}">Wikidata</a></li>
-				<li aria-label="Pour citer cette notice"><a class="link-citer" href="#citation">Citer</a></li>
-		</ul>
-
-				{{ content }}
-				{% if page.bibliographie == "oui" %}<div id="bibliographie">
-						<h1>Bibliographie</h1>
-				{% bibliography -f {{ page.id_notice }} %}
-				</div>{% endif %}
-				<div id="citation">
-					<h1>Pour citer cette notice</h1>
-					<p>{% if page.author %}<span class="caps">{{ page.author_id }}</span>{% else %}<span class="caps">{{ site.author.name_id }}</span>{% endif %}, "{{ page.title }}", dans <em>{{ site.title_complet }}</em>, {{ site.place }}, {{ site.date }}, en ligne &lt;{{ site.url }}/ark:/87276/{{ page.id_ark }}&gt;.</p>
-				</div>
-			</section>
-
+			<section id="content-notice">{{ content }}</section>
 		</main>
 {% include footer.html %}
 

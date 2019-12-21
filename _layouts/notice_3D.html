@@ -1,0 +1,46 @@
+---
+layout: microtypo
+---
+<!DOCTYPE html>
+{% include head.html %}
+<body class="body-notice">
+{% include header.html %}
+		<main id="main-notice">
+			<header>
+
+					<p class="partie-notice">
+						<a href="{{ site.url }}/{% if page.partie == 1 %}{% for contenus in site.contenus %}{% if contenus.type == "partie" and contenus.partie_numero == 1 %}{{ contenus.slug }}{% endif %}{% endfor %}{% endif %}{% if page.partie == 2 %}{% for contenus in site.contenus %}{% if contenus.type == "partie" and contenus.partie_numero == 2 %}{{ contenus.slug }}{% endif %}{% endfor %}{% endif %}{% if page.partie == 3 %}{% for contenus in site.contenus %}{% if contenus.type == "partie" and contenus.partie_numero == 3 %}{{ contenus.slug }}{% endif %}{% endfor %}{% endif %}{% if page.partie == 4 %}{% for contenus in site.contenus %}{% if contenus.type == "partie" and contenus.partie_numero == 4 %}{{ contenus.slug }}{% endif %}{% endfor %}{% endif %}">
+							<span class="num-partie">Partie {{ page.partie }} </span>
+							<span class="title-partie">{% if page.partie == 1 %}Numérisation{% endif %}{% if page.partie == 2 %}Reconstitution{% endif %}{% if page.partie == 3 %}L'art grec revisité{% endif %}{% if page.partie == 4 %}L'antiquité tardive{% endif %}</span>
+						</a>
+					</p>
+
+				<h1>{{ page.title }} [{{page.id_espace}}]</h1>
+
+			</header>
+			<div id="hack-phone"></div>
+			<section id="section-images" aria-label="Section contenant les images de la sculpture" data-nbr-img="{{page.vues}}" data-current-img="1">
+				<input type="radio" id="radio-360viewer" name="action-notice" value="360viewer" hidden>
+				<input type="radio" id="radio-diapo" name="action-notice" value="diapo" hidden>
+				<input type="radio" id="radio-zoom" name="action-notice" hidden value="zoom">
+                <input type="radio" id="radio-grid" name="action-notice" hidden value="grid" checked>
+                
+                <div>
+                    <iframe src="{{site.baseurl}}/potree/pages/RdC.html" style="width: 100%; height: 300%"></iframe>
+                </div>
+
+			</section>
+			<section id="content-notice">{{ content }}</section>
+		</main>
+{% include footer.html %}
+
+<script src="/assets/js/notices.js"></script>
+<script>
+	window.onload = function(){
+		commmon();
+		imageComparaison();
+		citation();
+		panzoomLoad(5);
+		noticesImages("/images/{{ page.id_notice }}-");
+	}
+</script>

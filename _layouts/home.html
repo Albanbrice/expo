@@ -25,10 +25,12 @@ layout: default
 
     <section id="toc-home">
         <section id="toc-home-partie-1" class="toc-home-partie">
-            <a href="">
+            <a href="/numerisation/">
                 <div id="link-part-1" class="link-part">
-                    <h1><small>Partie 1</small>La numérisation</h1>
-                    <h2>La villa dans son état actuel</h2>
+                    {% for contenus in site.contenus %}{% if contenus.type == "partie" and contenus.partie_numero == 1 %}
+                        <h1><small>Partie {{ contenus.partie_numero }}</small>{{ contenus.title }}</h1>
+                        <h2>{{ contenus.sous_titre }}</h2>
+                    {% endif %}{% endfor %}
                 </div>
                 <figure class="fig-part" id="fig-part1-1">
                     <img src="/images/accueil.jpg" sizes="(max-width: 1100px) 400px, (max-width: 1600px) 600px, (min-width: 1800) 1000px" alt="">
@@ -42,7 +44,7 @@ layout: default
             </a>
         </section>
         <section id="toc-home-partie-2" class="toc-home-partie">
-            <a href="">
+            <a href="/reconstitution/">
                 <div id="link-part-2" class="link-part">
                     {% for contenus in site.contenus %}{% if contenus.type == "partie" and contenus.partie_numero == 2 %}
                         <h1><small>Partie {{ contenus.partie_numero }}</small>{{ contenus.title }}</h1>
@@ -63,8 +65,29 @@ layout: default
         <section id="toc-home-partie-3" class="toc-home-partie">
             <a href="">
                 <div id="link-part-3" class="link-part">
-                    <h1><small>Partie 3</small>La redécouverte</h1>
-                    <h2>Les vues d'artistes et d'ingénieurs</h2>
+                    {% for contenus in site.contenus %}{% if contenus.type == "partie" and contenus.partie_numero == 3 %}
+                        <h1><small>Partie {{ contenus.partie_numero }}</small>{{ contenus.title }}</h1>
+                        <h2>{{ contenus.sous_titre }}</h2>
+                    {% endif %}{% endfor %}
+                </div>
+                <figure class="fig-part" id="fig-part3-1">
+                    <img src="/images/figure01_espace01.jpg" sizes="(max-width: 1100px) 400px, (max-width: 1600px) 600px, (min-width: 1800) 1000px" alt="">
+                </figure>
+                <figure class="fig-part" id="fig-part3-2">
+                    <img src="/images/figure01_espace01.jpg" sizes="(max-width: 1100px) 400px, (max-width: 1600px) 600px, (min-width: 1800) 1000px" alt="">
+                </figure>
+                <figure class="fig-part" id="fig-part3-3">
+                    <img src="/images/figure01_espace01.jpg" sizes="(max-width: 1100px) 400px, (max-width: 1600px) 600px, (min-width: 1800) 1000px" alt="">
+                </figure>
+            </a>
+        </section>
+        <section id="toc-home-partie-4" class="toc-home-partie">
+            <a href="">
+                <div id="link-part-4" class="link-part">
+                    {% for contenus in site.contenus %}{% if contenus.type == "partie" and contenus.partie_numero == 4 %}
+                        <h1><small>Partie {{ contenus.partie_numero }}</small>{{ contenus.title }}</h1>
+                        <h2>{{ contenus.sous_titre }}</h2>
+                    {% endif %}{% endfor %}
                 </div>
                 <figure class="fig-part" id="fig-part3-1">
                     <img src="/images/figure01_espace01.jpg" sizes="(max-width: 1100px) 400px, (max-width: 1600px) 600px, (min-width: 1800) 1000px" alt="">

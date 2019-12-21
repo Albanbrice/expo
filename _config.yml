@@ -21,3 +21,9 @@ encoding: UTF-8
 date: 2020
 timezone: Europe/Paris
 place : Paris
+
+collections:
+  contenus:
+    output: true
+    permalink: /:path
+

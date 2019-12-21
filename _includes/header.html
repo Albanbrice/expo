@@ -5,8 +5,8 @@
       <nav id="nav-catalogue" >
         <input type="radio" id="close-menu" name="toggle-menu" value="close" checked>
         <label for="close-menu" id="label-close-menu">{% include icons/close.svg %}</label>
-      <h1><a href="{{ site.url }}">Les sculptures de&nbsp;la&nbsp;<em>villa</em> romaine de&nbsp;Chiragan</a></h1>
-      <h2>Musée Saint-Raymond</h2>
+      <h1><a href="{{ site.url }}">{{site.title}}</a></h1>
+      <h2>{{site.title_complet}}</h2>
       <ul>
         {% for contenus in site.contenus %}{% if contenus.type == "partie" and contenus.partie_numero == 1 %}<li class="li-nav-chapter {% if page.partie == 1 %}current{% endif %}">
           <a href="{{ site.url }}/{{ contenus.slug }}"><span class="title-partie">{{ contenus.partie_numero }}. {{ contenus.title }}</span><span class="subtitle-partie">{{ contenus.sous_titre }}</span></a>
