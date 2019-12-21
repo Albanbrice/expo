@@ -6,17 +6,28 @@ type: statique
 
 ---
 
+villadiomede.huma-num.fr/expo
 
+    Responsable éditoriale, directrice de publication : Hélène Dessales.
+    AOROC UMR 8546, Ecole normale supérieure 45, rue d’Ulm 75005 Paris
+    Tel. 0144323026 (secrétariat) ; Fax. 0144323060
+    Contact mail
 
+    Maintenance du site : Alban-Brice Pimpaud.
+    villadiomede.huma-num.fr/expo est basé sur Jekyll
 
-Le contenu multimédia du catalogue des sculptures de la _villa_ de Chiragan est la propriété de la mairie de Toulouse.
+Contacter la responsable ou le webmaster
 
-Les [données d'inventaire](https://data.toulouse-metropole.fr/explore/dataset/inventaire-principal-musee-saint-raymond/information/?q=chiragan) sont publiées sous la licence [ODbL](https://data.toulouse-metropole.fr/page/licence/), et les images des sculptures du musée Saint-Raymond, les textes et les plans sous la licence [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.fr) en accord avec la [politique d'_open data_ de Toulouse Métropole](https://data.toulouse-metropole.fr/page/demarche/).
+    Ce site web est hébergé par TGIR HUMA-NUM->http://www.huma-num.fr]) .
+    TGIR HUMA-NUM, CNRS UMS 3598, 190-198 avenue de France CS N° 71345 F - 75648 Paris Cedex 13 (France).
 
-Les images réutilisées seront accompagnées de la mention suivante : Titre de la sculpture, n° d'inventaire, musée Saint-Raymond, musée d'Archéologie de Toulouse, photo : Daniel Martin.   
+En visitant ce site , vous reconnaissez que vous avez les moyens et la possibilité d’accéder et utiliser ce site et d’avoir vérifié que la configuration informatique utilisée ne contient aucun virus et qu’elle est en parfait état de fonctionnement .
+Vous reconnaissez également avoir été informé que le présent site est accessible 24h sur 24 , 7 jours par semaine, sauf dans des circonstances indépendantes de notre volonté : des problèmes sur les réseaux de communications ou des difficultés techniques de l’hébergeur. Vous reconnaissez, en particulier, être conscient que les pages web sont interprétées différemment par les différents navigateurs internet existants.
 
-Toutes les autres images sont reproduites avec l'autorisation des titulaires de droits mentionnés dans les légendes et sont expressément exclues des licences libres couvrant le reste de cette publication. Sauf mention contraire, ces images ne peuvent être reproduites, copiées, transmises ou manipulées sans le consentement des propriétaires.
+villadiomede.huma-num.fr/expo fait tous les efforts pour fournir à ses visiteurs des informations et/ou outils vérifiés mais ne saurait être tenu responsable, notamment, de la présence de virus sur ses pages.
 
-Les logos de la mairie de Toulouse et du musée Saint-Raymond sont protégés par le droit de la propriété intellectuelle. Ainsi, toute reproduction ou modification (totale ou partielle) de ces éléments graphiques sans autorisation préalable et écrite est interdite.
+Les textes, images ou tout autre élément composant le contenu éditorial du site sont la propriété exclusive du Villa Diomedes Project. Leur utilisation, la représentation totale ou partielle de ce site par quelque procédé que ce soit, sans l’autorisation expresse du la directrice de publication est interdite et constitue une reproduction non autorisée sanctionnée par les articles L.335- 2 et suivants du Code de la propriété intellectuelle.
 
-Fichiers sources du catalogue: [https://gitlab.com/musee-saint-raymond/villa-chiragan](https://gitlab.com/musee-saint-raymond/villa-chiragan)
+Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables (pdf) .
+
+Aucun utilisateur ou visiteur du site villadiomede.huma-num.fr/3dproject n’a le droit d’installer un lien hypertexte vers ce site sans l’autorisation préalable de la directrice de publication de villadiomede.huma-num.fr/expo.
