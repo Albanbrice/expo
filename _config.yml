@@ -5,7 +5,6 @@ baseurl: /expo
 exclude:
   - README.MD
   - potree/pointclouds
-  - potree/models
 
 producteur: Villa Diomedes Project
 producteur_complement: AOROC UMR 8546 Ecole normale supérieure
@@ -26,4 +25,3 @@ collections:
   contenus:
     output: true
     permalink: /:path
-

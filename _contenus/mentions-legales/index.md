@@ -5,6 +5,10 @@ def: mentions_legales
 type: statique
 
 ---
+
+
+
+
 Le contenu multimédia du catalogue des sculptures de la _villa_ de Chiragan est la propriété de la mairie de Toulouse.
 
 Les [données d'inventaire](https://data.toulouse-metropole.fr/explore/dataset/inventaire-principal-musee-saint-raymond/information/?q=chiragan) sont publiées sous la licence [ODbL](https://data.toulouse-metropole.fr/page/licence/), et les images des sculptures du musée Saint-Raymond, les textes et les plans sous la licence [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.fr) en accord avec la [politique d'_open data_ de Toulouse Métropole](https://data.toulouse-metropole.fr/page/demarche/).

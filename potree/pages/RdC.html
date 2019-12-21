@@ -36,7 +36,7 @@
 	
 	<div class="potree_container" style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; ">
 		<div id="potree_render_area"></div>
-		<div id="potree_sidebar_container"> </div>
+		<!-- <div id="potree_sidebar_container"> </div> -->
 	</div>
 	
 	<script>
@@ -48,7 +48,7 @@
 		viewer.setPointBudget(4*1000*1000);
 		viewer.loadSettingsFromURL();
 		
-		viewer.setDescription("Villa de Diomède, Pompéi</br>&#169; <a target='_blank' href='http://www.archeo3d.net/'>archeo3d.net</a> | photogrammétrie Iconem");
+		// viewer.setDescription("Villa de Diomède, Pompéi</br>&#169; <a target='_blank' href='http://www.archeo3d.net/'>archeo3d.net</a> | photogrammétrie Iconem");
 				
 		viewer.classifications[55] = { visible: true, name: 'my custom classification' };
 		viewer.classifications[56] = { visible: true, name: 'happy birthday classification' };
@@ -61,7 +61,7 @@
 		});
 
 		// Load and add point cloud to scene
-		Potree.loadPointCloud("../pointclouds/RdC/cloud.js", "Rez-de-Chausée", e => {
+		Potree.loadPointCloud("{{site.baseurl}}/potree/pointclouds/RdC/cloud.js", "Rez-de-Chausée", e => {
 			let scene = viewer.scene;
 			let pointcloud = e.pointcloud;
 			

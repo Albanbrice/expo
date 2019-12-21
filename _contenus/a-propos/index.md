@@ -5,4 +5,4 @@ def: a_propos
 type: statique
 
 ---
-lorem ipsum etc etc
+En cours de développement
