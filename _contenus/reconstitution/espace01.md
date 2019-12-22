@@ -6,7 +6,7 @@ donnees_biographiques2:
 date_creation: 
 id_wikidata: 
 bibliographie: oui
-layout: notice_3D
+layout: notice_3D_alt
 type: notice
 partie: 2
 nom_partie: reconstitution

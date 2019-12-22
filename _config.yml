@@ -2,6 +2,7 @@ title : La villa de Diomède
 title_complet : Une exploration virtuelle à Pompéi
 title_alt : Pompéi
 baseurl: /expo
+url_complet: "http://villadiomede.huma-num.fr/expo"
 exclude:
   - README.MD
   - potree/pointclouds
