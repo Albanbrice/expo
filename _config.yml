@@ -22,6 +22,8 @@ date: 2020
 timezone: Europe/Paris
 place : Paris
 
+keep_files: ["potree/pointcloud"]
+
 collections:
   contenus:
     output: true

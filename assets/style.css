@@ -4041,7 +4041,7 @@ input#open-menu, input#close-menu {
 }
 @media screen and (min-width: 900px) and (max-width: 1025px) {
   #main-notice header {
-    margin-left: 65vw;
+    margin-left: 70vw;
     margin-right: 60px;
     margin-top: 90px;
     max-width: 880px;
@@ -4059,7 +4059,7 @@ input#open-menu, input#close-menu {
 }
 @media screen and (min-width: 1025px) {
   #main-notice header {
-    margin-left: 65vw;
+    margin-left: 70vw;
     margin-right: 60px;
     margin-top: 90px;
     max-width: 880px;
@@ -4467,7 +4467,7 @@ input#open-menu, input#close-menu {
 @media screen and (min-width: 900px) {
   #section-images {
     position: fixed;
-    width: calc(65vw - 30px*2);
+    width: calc(70vw - 30px*2);
     height: calc(100vh - 60px);
     top: 60px;
     left: 0;
@@ -4685,7 +4685,7 @@ input#open-menu, input#close-menu {
 }
 @media screen and (min-width: 900px) {
   #content-notice {
-    margin-left: 65vw;
+    margin-left: 70vw;
     margin-right: 60px;
     margin-bottom: 96px;
     max-width: 880px;

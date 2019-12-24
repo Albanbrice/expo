@@ -437,7 +437,7 @@
 @media screen and (min-width: 900px){
   #section-images{
     position: fixed;
-    width: calc(65vw - #{$margin-notice-desktop}*2);    // 50vw
+    width: calc(70vw - #{$margin-notice-desktop}*2);    // 50vw
     height: calc(100vh - #{$height-section-navigation});
     top: $height-section-navigation;
     left: 0;

@@ -43,7 +43,7 @@
 
 @media screen and (min-width: 900px) and (max-width: 1025px){
     #main-notice header {
-        margin-left: 65vw; // 50vw
+        margin-left: 70vw; // 50vw
         margin-right: $margin-notice-desktop * 2;
         margin-top: $height-section-navigation + $margin-notice-desktop;
         max-width: 880px;
@@ -57,7 +57,7 @@
 
 @media screen and (min-width: 1025px){
     #main-notice header {
-        margin-left: 65vw; // 50 vw
+        margin-left: 70vw; // 50 vw
         margin-right: $margin-notice-desktop * 2;
         margin-top: $height-section-navigation + $margin-notice-desktop;
         max-width: 880px;
