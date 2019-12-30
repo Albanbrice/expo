@@ -1012,12 +1012,10 @@ figcaption {
   font-family: "Belleza";
   font-weight: 200;
   text-transform: uppercase;
-  z-index: 90;
 }
 #header-catalogue h2 {
   font-family: "Belleza";
   font-weight: 200;
-  z-index: 90;
 }
 #header-catalogue h3 {
   font-family: "Orkney";
@@ -1027,7 +1025,6 @@ figcaption {
   text-transform: initial;
   letter-spacing: 0px;
   font-weight: 400;
-  z-index: 90;
 }
 #header-catalogue .collection {
   font-family: "Orkney";
@@ -1036,7 +1033,7 @@ figcaption {
   font-weight: 400;
   text-transform: initial;
   letter-spacing: 0px;
-  z-index: 10;
+  z-index: 990;
   color: #222;
   position: absolute;
   max-width: 120px;
@@ -1049,11 +1046,10 @@ figcaption {
   left: 0;
   top: 0;
   overflow: hidden;
-  z-index: 10;
 }
 #header-catalogue figure img {
-  width: 100%;
-  height: 100%;
+  width: 70%;
+  height: 120%;
   object-fit: cover;
   object-position: top center;
 }
@@ -1071,7 +1067,7 @@ figcaption {
     overflow: hidden;
   }
   #header-catalogue hgroup {
-    z-index: 90;
+    z-index: 990;
     color: white;
     background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.9));
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.9);
@@ -1127,7 +1123,8 @@ figcaption {
     font-size: 48px;
     line-height: 48px;
     line-height: 52px;
-    padding-top: 33vh;
+    padding-top: 50vh;
+    z-index: 990;
   }
   #header-catalogue h2 {
     font-family: "Belleza";
@@ -1140,16 +1137,17 @@ figcaption {
     margin-top: 18px;
   }
   #header-catalogue h1, #header-catalogue h2, #header-catalogue h3 {
-    margin-left: calc(40vw + 12px*4);
-    max-width: 850px;
+    margin-left: calc(100vw*3/5 + 12px*4);
+    top: 16.6666666667px;
   }
   #header-catalogue .collection {
     right: 50px;
     top: 37.5px;
   }
   #header-catalogue figure {
-    width: 40vw;
+    width: 100vw;
     height: 100%;
+    z-index: 10;
   }
   #header-catalogue .icon-scroll {
     position: absolute;
