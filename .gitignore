@@ -1,4 +1,6 @@
+potree/pointclouds
+potree/models
 _site
 _src
+_trash
 .jekyll-cache
-potree/pointclouds

@@ -1,0 +1,72 @@
+<div class="potree_container" style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; object-fit: contain; ">
+    <div id="potree_render_area"></div>
+<div>
+
+<script>
+
+    window.viewer = new Potree.Viewer(document.getElementById("potree_render_area"));
+    
+    viewer.setEDLEnabled(false);
+    viewer.setFOV(50);
+    viewer.setPointBudget(4*1000*1000);
+    viewer.loadSettingsFromURL();
+    viewer.setBackground("skybox"); // ["skybox", "gradient", "black", "white"];
+
+    // viewer.setDescription("Villa de Diomède, Pompéi</br>&#169; <a target='_blank' href='http://www.archeo3d.net/'>archeo3d.net</a> | photogrammétrie Iconem");
+            
+    
+    viewer.loadGUI(() => {
+        viewer.setLanguage('FR');
+        $("#menu_tools").next().show();
+        $("#menu_clipping").next().show();
+        //viewer.toggleSidebar();
+    });
+
+// PLY
+var loader = new THREE.PLYLoader();
+loader.load("../potree/models/entree.ply", (geometry) => {
+geometry.computeVertexNormals();
+
+// place three instances of this bunny into the scene
+
+    let mesh1;
+    {
+        let wireframeMaterial = new THREE.MeshBasicMaterial({color:0xf0a732, wireframe:true, transparent:true});
+        let material =new THREE.MeshToonMaterial( {color: 0xCCCCCC, transparent:0.5});
+        
+        mesh1 = new THREE.Mesh( geometry, material );
+        wireframe = new THREE.Mesh( geometry, wireframeMaterial );
+        mesh1.add(wireframe);
+
+        //mesh1.position.set(0, 0,0);
+        //mesh1.scale.multiplyScalar(500);
+        //mesh1.rotation.set(Math.PI / 2, Math.PI, 0)
+        //viewer.scene.scene.add(mesh1);
+        scene.view.position.set(30.945, 22.270, 28.767);
+        scene.view.lookAt(new THREE.Vector3(22.582, 18.135, 29.369));                
+    }   
+
+
+    });
+    renderer = new THREE.WebGLRenderer( { antialias: true } );
+
+
+    // // Load and add point cloud to scene
+    Potree.loadPointCloud("../potree/pointclouds/villa/cloud.js", "entrée", e => {
+        let scene = viewer.scene;
+        let pointcloud = e.pointcloud;
+        
+        let material = pointcloud.material;
+        material.size = 1;
+        material.pointSizeType = Potree.PointSizeType.ADAPTIVE;
+        material.rgbBrightness  = 0;
+        material.shape = Potree.PointShape.SQUARE;
+        
+        scene.addPointCloud(pointcloud);
+        
+        //scene.view.position.set(30.945, 22.270, 28.767);
+        //scene.view.lookAt(new THREE.Vector3(22.582, 18.135, 29.369));
+        viewer.fitToScreen();
+    });
+    
+</script>

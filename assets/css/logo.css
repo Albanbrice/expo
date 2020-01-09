@@ -1,0 +1,50 @@
+.logos {
+    position: absolute;
+    width: 250px;
+    height: 100px;
+    top: 0px;
+    right:0;
+    overflow: hidden; 
+}
+
+.logo {
+    display:inline-block;    
+}
+
+#aoroc, #ens, #cjb {
+    /* position: absolute; */
+    display: block;
+    filter: alpha(opacity=100);
+    opacity: 0.9;
+}
+
+#aoroc {
+        width: 95px;
+        height: 50px;
+        background: url("../img/logos.png");
+            background-position-x: 0%;
+            background-position-y: 0%;
+        background-position: -197px -100px;
+}
+
+#ens  {
+    width: 50px;
+    height: 50px;
+    background: url("../img/logos.png");
+        background-position-x: 0%;
+        background-position-y: 0%;
+    background-position: -292px -100px;
+}
+
+#cjb {
+    width: 60px;
+    height: 50px;
+    background: url("../img/logos.png");
+        background-position-x: 0%;
+        background-position-y: 0%;
+    background-position: -342px -100px;
+}
+
+#aoroc:hover, #ens:hover, #cjb:hover {
+    opacity: 0.6;
+}

@@ -1,11 +1,13 @@
 title : La villa de Diomède
-title_complet : Une exploration virtuelle à Pompéi
+title_complet : L'exploration virtuelle d'une villa de Pompéi
 title_alt : Pompéi
 baseurl: /expo
 url_complet: "http://villadiomede.huma-num.fr/expo"
+url_prod: "http://villadiomede.huma-num.fr/3dproject/"
 exclude:
   - README.MD
   - potree/pointclouds
+  - potree/models
 
 producteur: Villa Diomedes Project
 producteur_complement: AOROC UMR 8546 Ecole normale supérieure
@@ -22,7 +24,7 @@ date: 2020
 timezone: Europe/Paris
 place : Paris
 
-keep_files: ["potree/pointcloud"]
+keep_files: ["potree/pointclouds"]
 
 collections:
   contenus:

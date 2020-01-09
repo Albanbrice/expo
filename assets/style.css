@@ -628,7 +628,7 @@ ul {
   width: calc(50vw - 100px);
   left: calc(50vw + 25px);
   position: fixed;
-  top: 85px;
+  top: 75px;
   z-index: 1000;
   border: 1px solid #8F8F8A;
   overflow: hidden;
@@ -704,7 +704,7 @@ figcaption {
 #page-content {
   max-width: 1450px;
   margin: 0 auto;
-  padding-top: 132px;
+  padding-top: 122px;
   padding-bottom: 10vh;
   padding-left: 50px;
   padding-right: 50px;
@@ -1736,7 +1736,7 @@ figcaption {
   overflow: visible;
   top: 0;
   left: 0;
-  height: 60px;
+  height: 50px;
   background-color: #f2f2ea;
   z-index: 99;
   display: -webkit-box;
@@ -1767,7 +1767,7 @@ figcaption {
   /* ul*/
 }
 #section-navigation #nav-chemin ul {
-  margin-left: 90px;
+  margin-left: 75px;
   font-family: "Orkney";
   font-size: 18px;
   line-height: 22px;
@@ -1777,7 +1777,7 @@ figcaption {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: calc(100vw - 450px - 60px);
+  max-width: calc(100vw - 450px - 50px);
 }
 #section-navigation #nav-chemin ul li {
   display: inline-block;
@@ -1832,8 +1832,8 @@ figcaption {
 #label-open-menu {
   position: fixed;
   z-index: 100;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-right: 1px solid currentColor;
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6 */
@@ -1870,7 +1870,7 @@ input#open-menu, input#close-menu {
 
 @media screen and (max-width: 1026px) {
   #nav-chemin ul {
-    max-width: calc(100vw - 170px - 60px) !important;
+    max-width: calc(100vw - 170px - 50px) !important;
   }
 
   #nav-parties .nav-partie {
@@ -1953,7 +1953,7 @@ input#open-menu, input#close-menu {
 }
 #nav-catalogue label {
   width: 100%;
-  height: 60px;
+  height: 50px;
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6 */
   display: -moz-box;
@@ -2316,7 +2316,7 @@ input#open-menu, input#close-menu {
   }
 
   #nav-partie-fixe {
-    height: 30px;
+    height: 25px;
   }
 }
 @media screen and (max-width: 700px) {
@@ -2402,7 +2402,7 @@ input#open-menu, input#close-menu {
   }
 
   #nav-partie-fixe {
-    height: 40px;
+    height: 33.3333333333px;
   }
   #nav-partie-fixe > li {
     padding-top: 10px;
@@ -2503,7 +2503,7 @@ input#open-menu, input#close-menu {
   margin-bottom: 30px;
 }
 #main-partie #main-content .content h4:target {
-  padding-top: 150px;
+  padding-top: 140px;
 }
 #main-partie #main-content .content .biblio-inline {
   position: absolute;
@@ -2546,7 +2546,7 @@ input#open-menu, input#close-menu {
 }
 @media screen and (min-width: 700px) {
   #main-partie {
-    padding-top: 60px;
+    padding-top: 50px;
   }
   #main-partie #main-content .content {
     max-width: 780px;
@@ -2569,7 +2569,7 @@ input#open-menu, input#close-menu {
 @media screen {
   #liste-notices {
     background-color: #f2f2ea;
-    margin-top: 60px;
+    margin-top: 50px;
     border-top: 1px solid #DEDED7;
     border-bottom: 1px solid #DEDED7;
     padding-top: 100px;
@@ -2904,7 +2904,7 @@ input#open-menu, input#close-menu {
   }
 }
 #chiragan-villa:target {
-  padding-top: 108px;
+  padding-top: 98px;
   margin-top: 0 !important;
 }
 
@@ -4022,7 +4022,7 @@ input#open-menu, input#close-menu {
   #main-notice header {
     margin-right: 40px;
     margin-left: 40px;
-    margin-top: 84px;
+    margin-top: 74px;
   }
   #main-notice header p {
     margin-bottom: 24px;
@@ -4041,7 +4041,7 @@ input#open-menu, input#close-menu {
   #main-notice header {
     margin-left: 70vw;
     margin-right: 60px;
-    margin-top: 90px;
+    margin-top: 80px;
     max-width: 880px;
   }
   #main-notice header p {
@@ -4059,7 +4059,7 @@ input#open-menu, input#close-menu {
   #main-notice header {
     margin-left: 70vw;
     margin-right: 60px;
-    margin-top: 90px;
+    margin-top: 80px;
     max-width: 880px;
   }
   #main-notice header p {
@@ -4428,7 +4428,7 @@ input#open-menu, input#close-menu {
   }
   #diaporama #diaporama_nav ul {
     height: 100%;
-    padding: 30px 20px;
+    padding: 25px 20px;
   }
   #diaporama #diaporama_nav ul li {
     width: calc(20vw - 40px);
@@ -4439,7 +4439,7 @@ input#open-menu, input#close-menu {
     width: 100%;
   }
   #diaporama #diaporama_nav #diapo-prev, #diaporama #diaporama_nav #diapo-next {
-    width: 30px;
+    width: 25px;
     height: 20vw;
     left: 20vw;
     -moz-transform: rotate(90deg);
@@ -4457,7 +4457,7 @@ input#open-menu, input#close-menu {
   }
   #diaporama #diaporama_nav #diapo-next {
     border-left: 1px solid #DEDED7;
-    bottom: calc(20vw * -1 + 30px);
+    bottom: calc(20vw * -1 + 25px);
   }
 }
 /* DESKTOP ------------------------------------------------------------------------------------ 
@@ -4466,8 +4466,8 @@ input#open-menu, input#close-menu {
   #section-images {
     position: fixed;
     width: calc(70vw - 30px*2);
-    height: calc(100vh - 60px);
-    top: 60px;
+    height: calc(100vh - 50px);
+    top: 50px;
     left: 0;
     margin-right: 30px;
     border-right: 1px solid #DEDED7;

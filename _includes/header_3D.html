@@ -1,0 +1,45 @@
+  <header class="MenuLateral">
+    <div class="MenuLateral-container">
+      <div class="MenuLateral-slider">
+        <!-- <div class="MenuLateral-titles logo" role="banner"> -->
+        <nav id="MenuLateral-nav" role="navigation">
+        <div class="MenuLateral-titles"><h1>{{site.title}}</h1>
+          <h2>{{site.title_complet}}</h2>
+        </div>
+        <!-- <nav class="MenuLateral-nav" role="navigation"> -->
+          <!-- <div class="MenuLateral-item ItemMenu">Accueil</div> -->
+          <ul>
+            {% for contenus in site.contenus %}{% if contenus.type == "partie" and contenus.partie_numero == 1 %}<li class="li-nav-chapter {% if page.partie == 1 %}current{% endif %}">
+              <a href="{{ site.url }}/{{ contenus.slug }}"><span class="title-partie">{{ contenus.partie_numero }}. {{ contenus.title }}</span><span class="subtitle-partie">{{ contenus.sous_titre }}</span></a>
+            </li>{% endif %}{% endfor %}
+            {% for contenus in site.contenus %}{% if contenus.type == "partie" and contenus.partie_numero == 2 %}<li class="li-nav-chapter {% if page.partie == 2 %}current{% endif %}">
+              <a href="{{ site.url }}/{{ contenus.slug }}"><span class="title-partie">{{ contenus.partie_numero }}. {{ contenus.title }}</span><span class="subtitle-partie">{{ contenus.sous_titre }}</span></a>
+            </li>{% endif %}{% endfor %}
+            {% for contenus in site.contenus %}{% if contenus.type == "partie" and contenus.partie_numero == 3 %}<li class="li-nav-chapter {% if page.partie == 3 %}current{% endif %}">
+              <a href="{{ site.url }}/{{ contenus.slug }}"><span class="title-partie">{{ contenus.partie_numero }}. {{ contenus.title }}</span><span class="subtitle-partie">{{ contenus.sous_titre }}</span></a>
+            </li>{% endif %}{% endfor %}
+            {% for contenus in site.contenus %}{% if contenus.type == "partie" and contenus.partie_numero == 4 %}<li class="li-nav-chapter {% if page.partie == 4 %}current{% endif %}">
+              <a href="{{ site.url }}/{{ contenus.slug }}"><span class="title-partie">{{ contenus.partie_numero }}. {{ contenus.title }}</span><span class="subtitle-partie">{{ contenus.sous_titre }}</span></a>
+            </li>{% endif %}{% endfor %}
+            <li class="li-nav-aside {% if page.def == "bibliographie" %}current{% endif %}" id="link-bilio"><a href="{{ site.url }}/bibliographie"><span class="title-partie">Bibliographie</span></a></li>
+            <li class="li-nav-aside {% if page.def == "a_propos" %}current{% endif %}"><a href="{{ site.url }}/a-propos"><span class="title-partie">À propos</span></a></li>
+            <li class="li-nav-aside {% if page.def == "mentions_legales" %}current{% endif %}"><a href="{{ site.url }}/mentions-legales"><span class="title-partie">Mentions légales</span></a></li>
+            <li class="li-nav-aside {% if page.def == "contact" %}current{% endif %}"><a href="{{ site.url }}/contact"><span class="title-partie">Contact</span></a></li>
+          </ul>		
+        </nav>
+          </div>	
+    </div>
+    <aside class="BarLateral">
+      <div class="BarLateral-container">
+        <a href="{{site.baseurl}}/" class="controls-btn icon-home BarLateral-home"><span class="hidden">Accueil</span></a>
+        <div class="BarLateral-controls">
+        <a id="btnMenu" href="#" class="controls-btn" title="Ouvrir le menu"><span class="hidden">Menu</span><span class="icon-menu"></span></a>
+       </div>
+        <div class="BarLateral-langContainer">
+          <a href="#" class="controls-btn BarLateral-lang">fr</a>
+          <a href="#" class="controls-btn BarLateral-lang">en</a>
+          <a href="#" class="controls-btn BarLateral-lang">it</a>
+        </div>  
+      </div>
+    </aside>
+  </header>

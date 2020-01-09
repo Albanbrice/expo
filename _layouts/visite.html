@@ -1,0 +1,44 @@
+---
+layout: microtypo
+---
+<!DOCTYPE html>
+<html class="js csscalc">
+{% include head_3D.html %}
+<body class="html front">
+{% include header_3D.html %}
+    <div class="global">
+            <!-- Menu culture -->
+            <div class="SiteHeader bgBlack hidden-sm hidden-xs show" role="complementary">
+                <nav class="SiteHeader-nav">
+                    <ul class="SiteHeader-list">
+                        <li><h1>{{site.title}}</h1><h2>{{site.title_complet}}</h2></li>
+                    </ul>
+                </nav>
+                <div class="SiteHeader-images posLeft">
+                    <a href="{{site.url_prod}}" title="{{site.producteur}}" target="_blank">
+                        <img src="{{site.baseurl}}/assets/img/logo_diomedes.png" alt="{{site.producteur}}" />
+                    </a>
+                </div>
+                <div class="SiteHeader-images posRight">
+                   <div class="logos">
+                        <div class="logo">
+                                <a id="aoroc" href="http://www.archeo.ens.fr/" title="UMR 8546 CNRS/PSL - AOROC archéologie et philologie" target="_blank" alt="UMR 8546 CNRS">  
+                                </a>
+                        </div>
+                        <div class="logo">
+                                <a id="ens" href="http://www.ens.fr/" title="Ecole Normale Supérieure" target="_blank" alt="Ecole Normale Supérieure">
+                                </a>
+                        </div>
+                        <div class="logo">   
+                            <a id="cjb" href="http://centrejeanberard.cnrs.fr/" title="Centre Jean Bérard" target="_blank" alt="Centre Jean Bérard">
+                           </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="SiteHeader-open"></div>
+            </div>
+            <!-- End Menu Culture -->
+    </div>
+    {% include potree.html %}
+</body>
+</html>
