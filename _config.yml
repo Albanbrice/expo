@@ -8,6 +8,7 @@ exclude:
   - README.MD
   - potree/pointclouds
   - potree/models
+  - _trash
 
 producteur: Villa Diomedes Project
 producteur_complement: AOROC UMR 8546 Ecole normale supérieure
