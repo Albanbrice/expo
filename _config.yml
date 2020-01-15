@@ -6,6 +6,7 @@ url_complet: "http://villadiomede.huma-num.fr/expo"
 url_prod: "http://villadiomede.huma-num.fr/3dproject/"
 exclude:
   - README.MD
+  - TODO.md
   - potree/pointclouds
   - potree/models
   - _trash
