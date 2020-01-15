@@ -52,7 +52,8 @@ geometry.computeVertexNormals();
 
 
     // // Load and add point cloud to scene
-    Potree.loadPointCloud("../potree/pointclouds/villa/cloud.js", "entrée", e => {
+    // Potree.loadPointCloud("../potree/pointclouds/villa/cloud.js", "entrée", e => {
+    Potree.loadPointCloud("http://villadiomede.huma-num.fr/expo/potree/pointclouds/villa/cloud.js", "Villa", e => {
         let scene = viewer.scene;
         let pointcloud = e.pointcloud;
         
