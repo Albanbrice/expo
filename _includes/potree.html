@@ -1,8 +1,8 @@
-<div class="potree_container" style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; object-fit: contain; ">
+div class="potree_container" style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; object-fit: contain; ">
     <div id="potree_render_area"></div>
-<div>
 
-<script>
+<div id="potree">
+    <script>
 
     window.viewer = new Potree.Viewer(document.getElementById("potree_render_area"));
     
@@ -71,3 +71,4 @@ geometry.computeVertexNormals();
     });
     
 </script>
+</div>
