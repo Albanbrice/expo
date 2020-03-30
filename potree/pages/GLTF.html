@@ -33,6 +33,8 @@
 	<script src="../libs/other/PLYLoader.js"></script>
 	<script src="../libs/other/OBJLoader.js"></script>
 	<script src="../libs/other/GLTFLoader.js"></script>
+
+
 	
 	<!-- INCLUDE ADDITIONAL DEPENDENCIES HERE -->
 	<!-- INCLUDE SETTINGS HERE -->
@@ -99,9 +101,58 @@
         
         });
         renderer = new THREE.WebGLRenderer( { antialias: true } );
+        loadModels();
         
-        
-        
+		//
+		
+			function loadModels() {
+				const peristyle = new THREE.Group();
+				peristyle.name = '02.Peristyle';
+				viewer.scene.scene.add(peristyle);
+
+				const loader = new THREE.GLTFLoader();
+				const url = '../models/02_colonne2.glb'
+				const onLoad = (gltf, position) => {
+
+					const colonnade = [['105' , 15.84228515625 , 28.430652618408203 , -12.3897705078125 , 207.0960074841789 ],
+					['106' , 17.61279296875 , 28.430652618408203 , -13.2891845703125 , -62.904000029255606 ],
+					['092' , 19.3857421875 , 28.430652618408203 , -14.1759033203125 , 27.09600076767527 ],
+					['093' , 20.314453125 , 28.430652618408203 , -12.285888671875 , 117.09599814951156 ],
+					['094' , 21.44775390625 , 28.430652618408203 , -10.138427734375 , 207.0960074841789 ],
+					['095' , 22.41015625 , 28.430652618408203 , -8.2579345703125 , 27.09600076767527 ],
+					['096' , 23.34619140625 , 28.430652618408203 , -6.42822265625 , 27.09600076767527 ],
+					['097' , 21.52734375 , 28.430652618408203 , -5.49755859375 , 117.09599814951156 ],
+					['098' , 19.77099609375 , 28.430652618408203 , -4.598876953125 , 207.0960074841789 ],
+					['099' , 18.03662109375 , 28.430652618408203 , -3.71142578125 , -62.904000029255606 ],
+					['100' , 17.0615234375 , 28.430652618408203 , -5.6168212890625 , 117.09599814951156 ],
+					['101' , 16.12109375 , 28.430652618408203 , -7.4549560546875 , 207.0960074841789 ],
+					['103' , 15.02392578125 , 28.430652618408203 , -9.59912109375 , -62.904000029255606 ],
+					['104' , 14.06982421875 , 28.430652618408203 , -11.4635009765625 , 117.09599814951156 ]]; 
+					
+					function createColonnade(id,x,y,z,rotY) {
+
+						let colonne = "colonne" + id;
+						colonne = gltf.scene.children[0].clone();
+						colonne.name = "02.colonne." + id;
+						colonne.position.set(x,y,z);
+						colonne.rotation.y = rotY*Math.PI/180;  
+
+						peristyle.add(colonne);
+					}
+
+					for (col of colonnade){
+						id = col[0];
+						x = col[1];
+						y = col[2];
+						z = col[3];
+						rotY= col[4];
+						createColonnade(id, x, y, z, rotY);
+					}
+				};
+
+				loader.load(url, gltf => onLoad(gltf));
+			
+			}
         
         
         // Modèles 3D

@@ -4,6 +4,10 @@ title_alt : Pompéi
 baseurl: /expo
 url_complet: "http://villadiomede.huma-num.fr/expo"
 url_prod: "http://villadiomede.huma-num.fr/3dproject/"
+url_BDD: "http://villadiomede.huma-num.fr/bdd/"
+url_potree: "../potree"
+suffixe_archives: "images/images_archives/"
+
 exclude:
   - README.MD
   - TODO.md
@@ -26,7 +30,9 @@ date: 2020
 timezone: Europe/Paris
 place : Paris
 
-keep_files: ["potree/pointclouds"]
+keep_files:
+  - potree/pointclouds
+  - potree/models
 
 collections:
   contenus:
